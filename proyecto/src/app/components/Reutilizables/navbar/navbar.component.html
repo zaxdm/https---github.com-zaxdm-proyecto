@@ -30,7 +30,7 @@
       </li>
 
       <!-- Productos -->
-      <li class="nav-item dropdown" #productosDropdown>
+      <li  #productosDropdown>
         <div class="nav-link-container">
           <a class="nav-link" [class.active-link]="isActive('/productos')" href="/productos">
             Productos
@@ -41,11 +41,6 @@
             <i class="bi bi-chevron-down"></i>
           </button>
         </div>
-        <ul class="dropdown-menu" aria-labelledby="productosMenu">
-          <li><a class="dropdown-item" href="#">Brocas</a></li>
-          <li><a class="dropdown-item" href="#">Martillos</a></li>
-          <li><a class="dropdown-item" href="#">Accesorios</a></li>
-        </ul>
       </li>
 
       <!-- Industrias -->
