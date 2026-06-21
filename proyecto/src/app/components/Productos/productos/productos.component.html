@@ -18,10 +18,9 @@
         <h3>{{ producto.titulo }}</h3>
         <p>{{ producto.descripcion }}</p>
       </div>
-      <button class="btn-mas" (click)="irACategorias()">
-  Más <i class="icon_right"></i>
-</button>
-
+      <button class="btn-mas" (click)="irAProducto(producto.link)">
+        Más <i class="icon_right"></i>
+      </button>
     </div>
   </div>
 
@@ -34,5 +33,4 @@
     </p>
   </div>
 
-  <app-contac-ing></app-contac-ing>
 </section>
