@@ -1,8 +1,15 @@
 /* ======== ESTRUCTURA GENERAL ======== */
 .inicio-container {
   font-family: 'Poppins', sans-serif;
-  color: #333;
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
   line-height: 1.6;
+  background-color: #FAF6EF; /* Crema natural - fondo principal */
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 /* ======== BANNER ======== */
@@ -20,7 +27,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(59, 42, 31, 0.7); /* Marrón coco oscuro con opacidad */
 }
 
 .banner-content {
@@ -41,7 +48,8 @@
 }
 
 .btn-banner {
-  background: #c8102e;
+  display: inline-block;
+  background: #4C7A3D; /* Verde palmera - acento primario */
   color: white;
   padding: 10px 25px;
   border-radius: 25px;
@@ -50,12 +58,13 @@
 }
 
 .btn-banner:hover {
-  background: #000000;
+  background: #3A5E2E; /* Verde oscuro - hover */
+  transform: translateY(-2px);
 }
 
 /* ======== SOBRE NOSOTROS ======== */
 .about {
-  background: #f9f9f9;
+  background: #EFE9DE; /* Beige piedra - fondo de sección alterno */
   padding: 60px 0;
 }
 
@@ -66,51 +75,68 @@
   gap: 40px;
 }
 
+.about-image {
+  flex: 1;
+  min-width: 280px;
+}
+
 .about-image img {
   width: 100%;
+  display: block;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(59, 42, 31, 0.2);
+  border: 2px solid #E8DFD0; /* Beige claro - bordes */
 }
 
 .about-text {
   flex: 1;
+  min-width: 280px;
 }
 
 .about-text h3 {
   font-size: 2rem;
   margin-bottom: 15px;
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
+}
+
+.about-text p {
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
+  margin-bottom: 20px;
 }
 
 .btn-primary {
-  background: #c8102e;
+  background: #4C7A3D; /* Verde palmera - acento primario */
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
   transition: 0.3s;
+  display: inline-block;
 }
 
 .btn-primary:hover {
-  background: #a00d24;
+  background: #3A5E2E; /* Verde oscuro - hover */
+  transform: translateY(-2px);
 }
 
 /* ======== PRODUCTOS ======== */
 .productos {
   padding: 70px 0;
   text-align: center;
+  background: #FAF6EF; /* Crema natural - fondo principal */
 }
 
 .section-title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 10px;
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
 }
 
 .section-desc {
   max-width: 700px;
   margin: 0 auto 40px;
-  color: #555;
+  color: #7A6553; /* Marrón suave - texto secundario */
 }
 
 .grid-productos {
@@ -120,33 +146,60 @@
 }
 
 .producto {
-  background: #fff;
+  background: #FFFFFF; /* Blanco cálido - cards */
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(59, 42, 31, 0.1);
   transition: 0.3s;
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
+  overflow: hidden;
 }
 
 .producto:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(59, 42, 31, 0.2);
+  border-color: #4C7A3D; /* Verde palmera - acento primario */
+}
+
+.producto a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .producto img {
   width: 100%;
-  border-radius: 10px 10px 0 0;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
 }
 
 .producto h4 {
   padding: 15px;
   font-size: 1rem;
-  color: #333;
+  font-weight: 500;
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
+  background: #FFFFFF; /* Blanco cálido - cards */
+}
+
+.producto .product-price {
+  color: #4C7A3D; /* Verde palmera - acento primario */
+  font-weight: 600;
+  padding: 0 15px 15px;
 }
 
 /* ======== INDUSTRIAS ======== */
 .industrias {
-  background: #f4f4f4;
+  background: #EFE9DE; /* Beige piedra - fondo de sección alterno */
   padding: 70px 0;
   text-align: center;
+}
+
+.industrias .section-title {
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
+}
+
+.industrias .section-desc {
+  color: #7A6553; /* Marrón suave - texto secundario */
 }
 
 .grid-industrias {
@@ -156,9 +209,33 @@
   margin-top: 30px;
 }
 
+.industria {
+  background: #FFFFFF; /* Blanco cálido - cards */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(59, 42, 31, 0.1);
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.industria:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(59, 42, 31, 0.2);
+  border-color: #4C7A3D; /* Verde palmera - acento primario */
+}
+
+.industria a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .industria img {
   width: 100%;
-  border-radius: 10px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
   transition: 0.3s;
 }
 
@@ -167,9 +244,73 @@
 }
 
 .industria h4 {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 1rem;
-  color: #222;
+  font-weight: 500;
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
+}
+
+/* ======== ELEMENTOS ADICIONALES (reutilizables en otras vistas) ======== */
+
+/* Badges y etiquetas */
+.badge-success {
+  background: #4C7A3D; /* Verde palmera */
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.badge-error {
+  background: #B3402F; /* Terracota - error/agotado */
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* Separadores */
+.separator {
+  border-top: 2px solid #E8DFD0; /* Beige claro - bordes */
+  margin: 40px 0;
+}
+
+/* Inputs y formularios */
+input, textarea, select {
+  background: #FFFFFF; /* Blanco cálido */
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
+  color: #3B2A1F; /* Marrón coco oscuro - texto */
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #4C7A3D; /* Verde palmera - acento primario */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 122, 61, 0.1);
+}
+
+/* Enlaces generales */
+a {
+  color: #4C7A3D; /* Verde palmera - acento primario */
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3A5E2E; /* Verde oscuro - hover */
+}
+
+/* ======== DETALLES PUNTUALES CON TURQUESA ======== */
+.icon-turquesa {
+  color: #6FA8A0; /* Turquesa mar - detalles puntuales */
+}
+
+.line-turquesa {
+  border-bottom: 3px solid #6FA8A0; /* Turquesa mar - línea decorativa */
+  width: 60px;
+  margin: 20px auto;
 }
 
 /* ======== RESPONSIVE ======== */
@@ -180,9 +321,19 @@
   }
   .banner-content {
     margin-left: 0;
+    padding: 0 20px;
+  }
+  .banner-text h2 {
+    font-size: 2rem;
   }
   .about-content {
     flex-direction: column;
     text-align: center;
+  }
+  .grid-productos {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .grid-industrias {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }

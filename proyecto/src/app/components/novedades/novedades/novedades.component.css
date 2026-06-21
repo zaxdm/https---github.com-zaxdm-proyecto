@@ -1,44 +1,44 @@
 /* ===== NOVEDADES ===== */
 .novedades-section {
-  background: #fff;
-  color: #222;
+  background: #FAF6EF; /* Crema natural - fondo principal */
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
   font-family: 'Poppins', sans-serif;
   padding-bottom: 4rem;
 }
 
 /* Noticias */
 .noticia-card {
-  background: #fafafa;
+  background: #FFFFFF; /* Blanco cálido - cards */
   border-radius: 12px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  border: 1.5px dashed #ddd;
+  border: 1.5px dashed #E8DFD0; /* Beige claro - bordes */
   transition: all 0.3s ease;
 }
 
 .noticia-card:hover {
-  background: #fff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  background: #FFFFFF; /* Blanco cálido - cards */
+  box-shadow: 0 4px 14px rgba(59, 42, 31, 0.08);
   transform: translateY(-3px);
+  border-color: #4C7A3D; /* Verde palmera - acento primario */
 }
 
 .noticia-titulo {
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .noticia-descripcion {
   font-size: 0.95rem;
-  color: #333;
+  color: #7A6553; /* Marrón suave - texto secundario */
   margin-bottom: 0.6rem;
 }
 
 .noticia-fecha {
   font-size: 0.85rem;
-  color: #777;
+  color: #7A6553; /* Marrón suave - texto secundario */
 }
-
 
 /* ===== NOVEDADES SIDEBAR ===== */
 .novedades-sidebar {
@@ -47,23 +47,24 @@
 
 /* Caja principal */
 .sidebar-box {
-  background: linear-gradient(180deg, #fff8f8 0%, #fff 100%);
+  background: #FFFFFF; /* Blanco cálido - cards */
   border-radius: 16px;
   padding: 1.8rem 1.6rem;
-  border: 1.5px dashed #e9b9be;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  border: 1.5px dashed #E8DFD0; /* Beige claro - bordes */
+  box-shadow: 0 4px 18px rgba(59, 42, 31, 0.05);
   transition: all 0.3s ease;
 }
 
 /* Efecto al pasar el mouse */
 .sidebar-box:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(59, 42, 31, 0.08);
+  border-color: #4C7A3D; /* Verde palmera - acento primario */
 }
 
 /* Título */
 .sidebar-box h5 {
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   font-weight: 700;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -81,7 +82,7 @@
   left: 0;
   width: 40px;
   height: 3px;
-  background: #c8102e;
+  background: #4C7A3D; /* Verde palmera - acento primario */
   border-radius: 2px;
 }
 
@@ -96,7 +97,7 @@
 .sidebar-box li {
   margin-bottom: 0.9rem;
   padding-bottom: 0.9rem;
-  border-bottom: 1px dotted #e3b7bb;
+  border-bottom: 1px dotted #E8DFD0; /* Beige claro - bordes */
   transition: all 0.3s ease;
 }
 
@@ -109,7 +110,7 @@
 
 /* Enlaces */
 .sidebar-box a {
-  color: #333;
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
   font-weight: 500;
   text-decoration: none;
   display: flex;
@@ -121,14 +122,14 @@
 /* Ícono decorativo */
 .sidebar-box a::before {
   content: "›";
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   font-size: 1.2rem;
   transition: transform 0.3s ease;
 }
 
 /* Hover elegante */
 .sidebar-box a:hover {
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   transform: translateX(4px);
 }
 
@@ -138,8 +139,8 @@
 
 @media (max-width: 991px) {
   .sidebar-box {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    border: 1.5px dashed #e8b7bc;
+    box-shadow: 0 6px 18px rgba(59, 42, 31, 0.08);
+    border: 1.5px dashed #E8DFD0; /* Beige claro - bordes */
     border-radius: 14px;
   }
 

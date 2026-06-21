@@ -1,38 +1,38 @@
 .contacto-section {
-  background: #fff;
+  background: #FAF6EF; /* Crema natural - fondo principal */
   font-family: 'Poppins', sans-serif;
-  color: #222;
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
 }
 
 /* Encabezados */
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
   font-size: 1.1rem;
-  color: #555;
+  color: #7A6553; /* Marrón suave - texto secundario */
 }
 
 /* Tarjeta */
 .contacto-card {
   border-radius: 12px;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: #FFFFFF; /* Blanco cálido - cards */
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
   transition: all 0.3s ease;
 }
 
 .contacto-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 12px rgba(59, 42, 31, 0.1);
 }
 
 /* Títulos */
 .contact-title {
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -47,7 +47,7 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   font-size: 1.1rem;
 }
 
@@ -55,25 +55,46 @@
 .form-control {
   padding-right: 2.5rem;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
+  background: #FFFFFF; /* Blanco cálido */
+  color: #3B2A1F; /* Marrón coco oscuro - texto */
 }
 
 .form-control:focus {
-  border-color: #c8102e;
-  box-shadow: 0 0 5px rgba(200, 16, 46, 0.3);
+  border-color: #4C7A3D; /* Verde palmera - acento primario */
+  box-shadow: 0 0 5px rgba(76, 122, 61, 0.3);
 }
 
 /* Botón */
 .btn-maxdrill {
-  background: #c8102e; /* color naranja Maxdrill */
+  background: #4C7A3D; /* Verde palmera - acento primario */
   color: #fff;
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.3s ease;
+  border: none;
+  padding: 0.75rem 1.5rem;
 }
 
 .btn-maxdrill:hover {
-  background: #c8102e; /* rojo Maxdrill */
+  background: #3A5E2E; /* Verde oscuro - hover */
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 42, 31, 0.2);
+}
+
+.btn-maxdrill:active {
+  transform: translateY(0);
+}
+
+/* Enlaces en el contenido */
+.contacto-card a {
+  color: #4C7A3D; /* Verde palmera - acento primario */
+  transition: color 0.3s ease;
+}
+
+.contacto-card a:hover {
+  color: #3A5E2E; /* Verde oscuro - hover */
 }
 
 /* Responsive */
