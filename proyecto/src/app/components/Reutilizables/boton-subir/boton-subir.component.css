@@ -3,7 +3,7 @@
   position: fixed;
   bottom: 85px; /* 🔹 Más cerca del otro botón */
   right: 45px; /* 🔹 Más a la derecha */
-  background-color: #c8102e;
+  background-color: #4C7A3D; /* Verde palmera - acento primario */
   color: white;
   border: none;
   border-radius: 50%;
@@ -19,7 +19,7 @@
 }
 
 .boton-subir:hover {
-  background-color: #000;
+  background-color: #3A5E2E; /* Verde oscuro - hover */
   transform: translateY(-3px);
 }
 
@@ -28,8 +28,8 @@
   position: fixed;
   bottom: 30px; /* 🔹 Mantiene espacio desde el borde inferior */
   right: 45px; /* 🔹 Alineado con el botón de subir */
-  background-color: #c8102e;
-  border: 2px solid #000; /* ✅ Borde negro añadido */
+  background-color: #4C7A3D; /* Verde palmera - acento primario */
+  border: 2px solid #3B2A1F; /* Marrón coco oscuro */
   border-radius: 8px;
   color: white;
   font-weight: 600;
@@ -39,17 +39,17 @@
   display: flex;
   align-items: center;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25); /* ✨ Sombra sutil */
+  box-shadow: 0 4px 6px rgba(59, 42, 31, 0.25);
 }
 
 .boton-mensaje:hover {
-  background-color: #ae4456eb;
+  background-color: #3A5E2E; /* Verde oscuro - hover */
   transform: translateY(-3px);
 }
 
-/* Icono negro a la izquierda */
+/* Icono a la izquierda */
 .boton-mensaje .icono {
-  background-color: #000;
+  background-color: #3B2A1F; /* Marrón coco oscuro */
   padding: 8px 12px;
   display: flex;
   align-items: center;

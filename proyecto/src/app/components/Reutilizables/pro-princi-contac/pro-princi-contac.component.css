@@ -6,7 +6,7 @@
 }
 
 .productos-principales h2 {
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   font-size: 1.8rem;
   margin-bottom: 2rem;
   font-weight: 700;
@@ -19,16 +19,18 @@
 }
 
 .producto-card {
-  background: #fff;
+  background: #FFFFFF; /* Blanco cálido - cards */
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(59, 42, 31, 0.08);
   transition: all 0.3s ease;
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
 }
 
 .producto-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(59, 42, 31, 0.12);
+  border-color: #4C7A3D; /* Verde palmera - acento primario */
 }
 
 .producto-card img {
@@ -43,12 +45,12 @@
 
 .producto-info h3 {
   font-size: 1.2rem;
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   margin-bottom: 0.5rem;
 }
 
 .producto-info p {
-  color: #555;
+  color: #7A6553; /* Marrón suave - texto secundario */
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -56,8 +58,8 @@
 .btn-mas {
   display: inline-block;
   margin: 1rem auto;
-  background-color: #e0e0e0;
-  color: #333;
+  background-color: #EFE9DE; /* Beige piedra - fondo alterno */
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
   border-radius: 25px;
   padding: 0.5rem 1.5rem;
   font-weight: 500;
@@ -66,6 +68,6 @@
 }
 
 .producto-card:hover .btn-mas {
-  background-color: #c8102e;
+  background-color: #4C7A3D; /* Verde palmera - acento primario */
   color: #fff;
 }

@@ -1,44 +1,197 @@
+/* ======== SECCIÓN DE CONSULTA ======== */
 .inquiry-section {
-  background-color: #c8102e;
-  color: #fff;
+  background: #4C7A3D; /* Verde palmera - acento primario */
+  color: #FFFFFF;
   text-align: center;
   padding: 3rem 1.5rem;
-  border-radius: 16px;
+  border-radius: 10px;
   width: 90%;
+  max-width: 1180px;
   margin: 0 auto;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(59, 42, 31, 0.1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
+}
+
+.inquiry-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(59, 42, 31, 0.05);
+  pointer-events: none;
+}
+
+.inquiry-section::after {
+  content: "◆";
+  position: absolute;
+  font-size: 8rem;
+  opacity: 0.05;
+  right: -20px;
+  bottom: -40px;
+  transform: rotate(-15deg);
+  color: #FFFFFF;
 }
 
 .inquiry-content h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(59, 42, 31, 0.15);
+}
+
+.inquiry-content h3 i {
+  margin-right: 10px;
+  color: #6FA8A0; /* Turquesa mar - detalles puntuales */
 }
 
 .inquiry-content p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
+  opacity: 0.95;
+  color: #FAF6EF; /* Crema natural */
+  text-shadow: 0 1px 4px rgba(59, 42, 31, 0.1);
 }
 
 .inquiry-btn {
-  background-color: #fff;
-  color: #c8102e;
+  background: #FFFFFF;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   font-weight: 600;
   border: none;
   border-radius: 25px;
-  padding: 0.8rem 2rem;
+  padding: 0.85rem 2.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(59, 42, 31, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.inquiry-btn::after {
+  content: "→";
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  display: inline-block;
 }
 
 .inquiry-btn:hover {
-  background-color: #f4f4f4;
+  background: #FAF6EF; /* Crema natural */
+  color: #3A5E2E; /* Verde oscuro - hover */
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(59, 42, 31, 0.2);
 }
 
+.inquiry-btn:hover::after {
+  transform: translateX(6px);
+}
+
+.inquiry-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(59, 42, 31, 0.1);
+}
+
+/* ======== VERSIÓN SIMPLE (alternativa) ======== */
+.inquiry-section-simple {
+  background: #4C7A3D; /* Verde palmera - acento primario */
+  color: #FFFFFF;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1180px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(59, 42, 31, 0.1);
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
+}
+
+.inquiry-section-simple .inquiry-content h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.inquiry-section-simple .inquiry-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #FAF6EF;
+}
+
+.inquiry-section-simple .inquiry-btn {
+  background: #FFFFFF;
+  color: #4C7A3D;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  padding: 0.85rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(59, 42, 31, 0.1);
+}
+
+.inquiry-section-simple .inquiry-btn:hover {
+  background: #FAF6EF;
+  color: #3A5E2E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 42, 31, 0.2);
+}
+
+/* ======== RESPONSIVE ======== */
 @media (max-width: 768px) {
-  .inquiry-content h3 {
-    font-size: 1.4rem;
+  .inquiry-section,
+  .inquiry-section-simple {
+    width: 95%;
+    padding: 2rem 1.5rem;
+  }
+
+  .inquiry-content h3,
+  .inquiry-section-simple .inquiry-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .inquiry-content p,
+  .inquiry-section-simple .inquiry-content p {
+    font-size: 1rem;
+  }
+
+  .inquiry-btn,
+  .inquiry-section-simple .inquiry-btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
+  }
+
+  .inquiry-section::after {
+    font-size: 5rem;
+    right: -15px;
+    bottom: -25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inquiry-section,
+  .inquiry-section-simple {
+    width: 100%;
+    border-radius: 0;
+    padding: 2rem 1.2rem;
+  }
+
+  .inquiry-content h3,
+  .inquiry-section-simple .inquiry-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .inquiry-btn,
+  .inquiry-section-simple .inquiry-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 280px;
   }
 }

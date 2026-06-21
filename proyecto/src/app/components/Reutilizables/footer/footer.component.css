@@ -1,62 +1,117 @@
 .footer {
-  background-color: #000;
-  color: #e0e0e0;
+  background: linear-gradient(135deg, #2C2A1A 0%, #3D3A28 100%);
+  color: #D8D5C5;
   font-family: 'Roboto', sans-serif;
-  padding: 2rem 0; /* 🔹 antes era py-5 (3rem arriba y abajo), ahora más compacto */
+  padding: 2rem 0;
+  border-top: 3px solid #6B8A2D;
 }
 
 .footer-title {
   font-weight: bold;
   letter-spacing: 1px;
-  margin-bottom: 0.75rem; /* 🔹 menos espacio debajo del título */
-  color: #fff;
+  margin-bottom: 0.75rem;
+  color: #8FA17A;
+  text-transform: uppercase;
+  font-size: 1.1rem;
 }
 
 .footer-logo {
-  max-width: 140px; /* 🔹 un poco más pequeño para ajustar visualmente */
+  max-width: 140px;
   margin-bottom: 0.75rem;
+  filter: brightness(1.1);
 }
 
 .footer-divider {
   width: 100%;
-  height: 1px;
-  background-color: #555;
-  margin: 0.75rem 0; /* 🔹 antes era my-3 (1rem arriba y abajo) */
+  height: 2px;
+  background: linear-gradient(90deg, #6B8A2D, #8FA17A, #6B8A2D);
+  margin: 0.75rem 0;
+  border-radius: 2px;
 }
 
 .footer ul li {
-  margin-bottom: 0.35rem; /* 🔹 menos espacio entre ítems */
-  transition: color 0.3s ease;
+  margin-bottom: 0.35rem;
+  transition: color 0.3s ease, transform 0.3s ease;
   font-size: 0.95rem;
+  color: #CFC4A9;
 }
 
 .footer ul li i {
-  color: #f26722;
+  color: #6B8A2D;
   font-size: 0.85rem;
+  width: 20px;
+  transition: transform 0.3s ease;
 }
 
 .footer ul li:hover {
-  color: #f26722;
+  color: #8FA17A;
+  transform: translateX(5px);
+}
+
+.footer ul li:hover i {
+  transform: scale(1.2);
+  color: #8FA17A;
 }
 
 .footer p {
-  margin-bottom: 0.4rem; /* 🔹 compacta los textos de contacto */
+  margin-bottom: 0.4rem;
   font-size: 0.95rem;
+  color: #CFC4A9;
+}
+
+.footer p i {
+  color: #6B8A2D;
+  width: 20px;
+}
+
+.footer .social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  color: #CFC4A9;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: #6B8A2D;
+  transform: translateY(-3px);
+}
+
+.footer .footer-bottom {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(107, 138, 45, 0.2);
+  font-size: 0.85rem;
+  color: #8FA17A;
+}
+
+.footer .footer-bottom a {
+  color: #6B8A2D;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .footer-bottom a:hover {
+  color: #8FA17A;
+  text-decoration: underline;
 }
 
 @media (max-width: 767px) {
   .footer {
-    text-align: left; /* 🔹 Mantiene alineado a la izquierda en móviles */
+    text-align: left;
     padding: 1.5rem 0;
   }
 
   .footer .text-center {
-    text-align: left !important; /* 🔹 Asegura que la columna central también se alinee */
+    text-align: left !important;
   }
 
   .footer-logo {
     display: block;
-    margin-left: 0; /* 🔹 Evita centrado automático */
+    margin-left: 0;
+  }
+
+  .footer .social-icons a {
+    margin-right: 15px;
   }
 }
-

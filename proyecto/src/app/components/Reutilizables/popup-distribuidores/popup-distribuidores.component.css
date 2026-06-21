@@ -1,10 +1,10 @@
 .popup-distribuidores {
   position: fixed;
-  right: 0; /* Pegado completamente al borde derecho */
-  bottom: 280px; /* Ajusta para moverlo arriba/abajo */
+  right: 0;
+  bottom: 280px;
   width: 320px;
-  background: rgba(11, 17, 33, 0.95);
-  color: #fff;
+  background: #3B2A1F; /* Marrón coco oscuro */
+  color: #FAF6EF; /* Crema natural */
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
   border-top-right-radius: 0;
@@ -13,60 +13,169 @@
   z-index: 1080;
   transition: all 0.3s ease;
   animation: fadeIn 0.5s ease;
+  border: 1px solid #4C7A3D; /* Verde palmera */
+  border-right: none;
+  box-shadow: -4px 8px 30px rgba(59, 42, 31, 0.4);
+}
+
+.popup-distribuidores::before {
+  content: "🌿";
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.06;
+  right: 5px;
+  bottom: 5px;
+  transform: rotate(-10deg);
+  pointer-events: none;
 }
 
 .popup-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 2px solid #4C7A3D; /* Verde palmera */
   padding-bottom: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  h5 {
-    font-size: 1.05rem;
-  }
+.popup-header h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #4C7A3D; /* Verde palmera */
+  margin: 0;
+  letter-spacing: -0.3px;
+}
 
-  .btn-close {
-    filter: invert(1);
-    opacity: 0.8;
-    &:hover {
-      opacity: 1;
-    }
-  }
+.popup-header h5 i {
+  color: #4C7A3D; /* Verde palmera */
+  margin-right: 8px;
+}
+
+.popup-header .btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.popup-header .btn-close:hover {
+  opacity: 1;
+  transform: rotate(90deg);
 }
 
 .popup-body p {
   font-size: 0.95rem;
-  color: #e0e0e0;
+  color: #E8DFD0; /* Beige claro */
   margin-top: 0.8rem;
+  line-height: 1.6;
 }
 
-.btn-primary {
-  background-color: #e63946;
+.popup-body p i {
+  color: #4C7A3D; /* Verde palmera */
+  margin-right: 6px;
+}
+
+/* Botón primario - Solicitar información */
+.popup-distribuidores .btn-primary {
+  background: #4C7A3D; /* Verde palmera */
   border: none;
-  border-radius: 8px;
-  transition: 0.3s ease;
-
-  &:hover {
-    background-color: #d62828;
-    transform: translateY(-2px);
-  }
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(76, 122, 61, 0.3);
 }
 
-.btn-outline-light {
-  border-radius: 8px;
-  transition: 0.3s ease;
+.popup-distribuidores .btn-primary:hover {
+  background: #3A5E2E; /* Verde oscuro */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(76, 122, 61, 0.4);
+}
 
-  &:hover {
-    background-color: #fff;
-    color: #0b1121;
-  }
+.popup-distribuidores .btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Botón outline - Cerrar / Más tarde */
+.popup-distribuidores .btn-outline-light {
+  border: 2px solid #4C7A3D; /* Verde palmera */
+  color: #FAF6EF; /* Crema natural */
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.popup-distribuidores .btn-outline-light:hover {
+  background: #4C7A3D; /* Verde palmera */
+  color: #fff;
+  border-color: #4C7A3D;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(76, 122, 61, 0.3);
+}
+
+/* Badge de oferta o descuento */
+.popup-distribuidores .badge-offer {
+  display: inline-block;
+  background: #4C7A3D; /* Verde palmera */
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+/* Icono de alerta/notificación */
+.popup-distribuidores .popup-icon {
+  display: inline-block;
+  background: rgba(76, 122, 61, 0.15);
+  border-radius: 50%;
+  padding: 8px 10px;
+  margin-right: 10px;
+  color: #4C7A3D; /* Verde palmera */
+  font-size: 1.2rem;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateX(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .popup-distribuidores {
+    width: 280px;
+    bottom: 200px;
+    padding: 0.8rem 1rem;
+  }
+
+  .popup-header h5 {
+    font-size: 0.95rem;
+  }
+
+  .popup-body p {
+    font-size: 0.85rem;
+  }
+
+  .popup-distribuidores .btn-primary,
+  .popup-distribuidores .btn-outline-light {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .popup-distribuidores::before {
+    font-size: 2rem;
   }
 }

@@ -1,10 +1,10 @@
 import { Component, HostListener, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/Reutilizables/header/header.component';
-import { NavbarComponent } from "./components/Reutilizables/navbar/navbar.component";
 import { FooterComponent } from "./components/Reutilizables/footer/footer.component";
 import { PopupDistribuidoresComponent } from "./components/Reutilizables/popup-distribuidores/popup-distribuidores.component";
 import { BotonSubirComponent } from "./components/Reutilizables/boton-subir/boton-subir.component";
+import { NavbarComponent } from './components/Reutilizables/navbar/navbar.component';
+import { HeaderComponent } from './components/Reutilizables/header/header.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',

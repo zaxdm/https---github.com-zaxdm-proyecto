@@ -1,9 +1,9 @@
 /* ====== ESTRUCTURA GENERAL ====== */
 .industrias {
   font-family: 'Poppins', sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
-   padding-bottom: 4rem; 
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
+  background-color: #FAF6EF; /* Crema natural - fondo principal */
+  padding-bottom: 4rem; 
 }
 
 /* ====== ENCABEZADO INDUSTRIAS ====== */
@@ -11,20 +11,20 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  background: #fff;
+  background: #FFFFFF; /* Blanco cálido - cards */
   border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 14px rgba(59, 42, 31, 0.08);
   overflow: hidden;
-  margin: 3rem auto;          /* 🔹 Centra horizontalmente */
-  max-width: 1100px;          /* 🔹 Controla el ancho total */
-  width: 90%;                 /* 🔹 Adaptable en pantallas pequeñas */
+  margin: 3rem auto;
+  max-width: 1100px;
+  width: 90%;
 }
 
 /* Imagen a la izquierda */
 .header-image {
   flex: 1;
   min-width: 300px;
-  max-width: 500px;           /* 🔹 Un poco más compacto */
+  max-width: 500px;
 }
 
 .header-image img {
@@ -34,10 +34,10 @@
   display: block;
 }
 
-/* Texto sobre fondo naranja a la derecha */
+/* Texto sobre fondo a la derecha */
 .header-content {
   flex: 1;
-  background-color: #c8102e; /* 🔹 Color corporativo */
+  background-color: #4C7A3D; /* Verde palmera - acento primario */
   color: #fff;
   padding: 2rem;
   display: flex;
@@ -56,7 +56,7 @@
   margin-bottom: 1rem;
 }
 
-/* 🔹 Responsive para pantallas pequeñas */
+/* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   .industrias-header {
     flex-direction: column;
@@ -73,12 +73,11 @@
   }
 }
 
-
 /* ====== LIST ====== */
 .industria-list {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centra horizontalmente */
+  align-items: center;
   gap: 2.5rem;
   margin-top: 2rem;
 }
@@ -87,18 +86,20 @@
 .industria-card-horizontal {
   display: flex;
   align-items: center;
-  background: #fff;
+  background: #FFFFFF; /* Blanco cálido - cards */
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(59, 42, 31, 0.1);
   overflow: hidden;
   transition: all 0.3s ease;
-  width: 80%; /* 🔹 Ajusta el ancho global (puedes cambiar a 70% si lo quieres más angosto) */
-  max-width: 1100px; /* 🔹 Evita que crezca demasiado en pantallas grandes */
+  width: 80%;
+  max-width: 1100px;
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
 }
 
 .industria-card-horizontal:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 24px rgba(59, 42, 31, 0.15);
+  border-color: #4C7A3D; /* Verde palmera - acento primario */
 }
 
 /* Imagen lateral */
@@ -125,7 +126,7 @@
 }
 
 .industria-card-horizontal h3 {
-  color: #c8102e;
+  color: #4C7A3D; /* Verde palmera - acento primario */
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -134,13 +135,13 @@
 .divider {
   width: 60px;
   height: 3px;
-  background-color: #c8102e;
+  background-color: #4C7A3D; /* Verde palmera - acento primario */
   margin: 0.5rem 0 1.5rem 0;
   border-radius: 3px;
 }
 
 .industria-card-horizontal p {
-  color: #555;
+  color: #7A6553; /* Marrón suave - texto secundario */
   line-height: 1.8;
   font-size: 1.05rem;
   margin-bottom: 1.5rem;
@@ -149,8 +150,8 @@
 /* Botón */
 .btn-ver-mas {
   display: inline-block;
-  background-color: #eaeaea;
-  color: #333;
+  background-color: #EFE9DE; /* Beige piedra - fondo alterno */
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
   border-radius: 25px;
   padding: 0.6rem 1.6rem;
   font-weight: 500;
@@ -159,7 +160,7 @@
 }
 
 .industria-card-horizontal:hover .btn-ver-mas {
-  background-color: #c8102e;
+  background-color: #4C7A3D; /* Verde palmera - acento primario */
   color: #fff;
 }
 
@@ -180,20 +181,20 @@
   }
 }
 
-
 /* ====== CARD DE DESCRIPCIÓN Y BOTÓN ====== */
 .industrias-brief-card {
-  background: #fff;
+  background: #FFFFFF; /* Blanco cálido - cards */
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(59, 42, 31, 0.1);
   padding: 2.5rem 2rem;
   max-width: 950px;
-  margin: 4rem auto; /* separación del contenido anterior */
+  margin: 4rem auto;
   text-align: center;
+  border: 1px solid #E8DFD0; /* Beige claro - bordes */
 }
 
 .industrias-brief-card .industrias-brief {
-  color: #444;
+  color: #3B2A1F; /* Marrón coco oscuro - texto principal */
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
@@ -206,7 +207,7 @@
 }
 
 .btn-cotizacion {
-  background-color: #c8102e;
+  background-color: #4C7A3D; /* Verde palmera - acento primario */
   color: #fff;
   border: none;
   border-radius: 25px;
@@ -215,19 +216,18 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.25);
+  box-shadow: 0 4px 12px rgba(76, 122, 61, 0.25);
 }
 
 .btn-cotizacion:hover {
-  background-color: #a40d24;
+  background-color: #3A5E2E; /* Verde oscuro - hover */
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(200, 16, 46, 0.35);
+  box-shadow: 0 6px 18px rgba(76, 122, 61, 0.35);
 }
 
 .btn-cotizacion:active {
   transform: translateY(0);
 }
-
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
