@@ -1,0 +1,109 @@
+<header class="site-header">
+  <div class="wrap">
+    <div class="header-row">
+      <div class="brand">
+        <span class="brand-mark">Meridiano</span>
+        <span class="brand-sub">Papelería &amp; Estudio</span>
+      </div>
+      <button
+        class="cart-toggle"
+        (click)="openDrawer()"
+        [attr.aria-expanded]="isDrawerOpen()"
+        aria-haspopup="true"
+      >
+        <span>Carrito</span>
+        <span class="cart-count">{{ totalItems() }}</span>
+      </button>
+    </div>
+    <p class="tagline">Objetos para escribir despacio.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="catalog-head">
+    <h1>Catálogo general</h1>
+    <span class="catalog-meta">{{ products.length }} artículos</span>
+  </div>
+
+  <div class="grid">
+    @for (p of products; track p.id) {
+      <div class="card">
+        <span class="card-sku">{{ p.sku }}</span>
+        <div class="card-swatch" [style.background]="p.color">{{ p.glyph }}</div>
+        <h3 class="card-name">{{ p.name }}</h3>
+        <p class="card-desc">{{ p.desc }}</p>
+        <div class="card-foot">
+          <span class="card-price">{{ p.price | currency }}</span>
+          <button
+            class="add-btn"
+            [class.stamped]="recentlyAdded() === p.id"
+            (click)="addToCart(p.id)"
+          >
+            {{ recentlyAdded() === p.id ? 'Añadido ✓' : 'Añadir' }}
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</main>
+
+<div class="overlay" [class.open]="isDrawerOpen()" (click)="closeDrawer()"></div>
+
+<aside class="drawer" [class.open]="isDrawerOpen()" aria-label="Carrito de compras">
+  <div class="drawer-head">
+    <span class="drawer-title">Tu carrito</span>
+    <button class="drawer-close" (click)="closeDrawer()" aria-label="Cerrar carrito">✕</button>
+  </div>
+
+  <div class="drawer-body">
+    @if (cartLines().length === 0) {
+      <div class="empty-state">
+        <span class="glyph">∅</span>
+        <p>Tu carrito está vacío.<br />Explora el catálogo para empezar.</p>
+      </div>
+    } @else {
+      @for (line of cartLines(); track line.product.id) {
+        <div class="line-item">
+          <div class="li-swatch" [style.background]="line.product.color">
+            {{ line.product.glyph }}
+          </div>
+          <div class="li-info">
+            <div class="li-name">{{ line.product.name }}</div>
+            <div class="li-unit">{{ line.product.price | currency }} c/u</div>
+            <div class="li-controls">
+              <div class="qty-stepper">
+                <button (click)="changeQty(line.product.id, -1)" aria-label="Disminuir cantidad">−</button>
+                <span>{{ line.qty }}</span>
+                <button (click)="changeQty(line.product.id, 1)" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <span class="li-line-total">{{ line.product.price * line.qty | currency }}</span>
+            </div>
+            <button class="li-remove" (click)="removeItem(line.product.id)">Quitar</button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+  @if (cartLines().length > 0) {
+    <div class="drawer-foot">
+      <div class="totals-row">
+        <span>Subtotal</span>
+        <span>{{ subtotal() | currency }}</span>
+      </div>
+      <div class="totals-row">
+        <span>Envío</span>
+        <span>{{ shipping() === 0 ? 'Gratis' : (shipping() | currency) }}</span>
+      </div>
+      <div class="totals-row grand">
+        <span>Total</span>
+        <span>{{ total() | currency }}</span>
+      </div>
+      <button class="checkout-btn" (click)="checkout()">Finalizar compra</button>
+    </div>
+  }
+</aside>
+
+@if (toastMessage(); as msg) {
+  <div class="toast show">{{ msg }}</div>
+}
