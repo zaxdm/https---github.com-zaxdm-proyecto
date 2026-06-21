@@ -7,8 +7,8 @@ interface Product {
   name: string;
   desc: string;
   price: number;
-  color: string;
-  glyph: string;
+  image: string;
+  alt: string;
 }
 
 interface CartLine {
@@ -20,14 +20,14 @@ const SHIPPING_FLAT = 4.5;
 const FREE_SHIP_THRESHOLD = 60;
 
 const PRODUCTS: Product[] = [
-  { id: 'p1', sku: 'MER-001', name: 'Cuaderno de hilo', desc: 'Tapa de tela cruda, 120 hojas, cosido a mano.', price: 18.5, color: '#2D5A4A', glyph: 'C' },
-  { id: 'p2', sku: 'MER-002', name: 'Pluma estilográfica', desc: 'Cuerpo de resina, plumín fino acero inoxidable.', price: 34.0, color: '#1C1B19', glyph: 'P' },
-  { id: 'p3', sku: 'MER-003', name: 'Tinta sepia 30ml', desc: 'Pigmento mineral, frasco de vidrio soplado.', price: 12.0, color: '#A33B25', glyph: 'T' },
-  { id: 'p4', sku: 'MER-004', name: 'Set de clips de latón', desc: 'Doce piezas, acabado envejecido a mano.', price: 9.5, color: '#8A7A4E', glyph: 'L' },
-  { id: 'p5', sku: 'MER-005', name: 'Cortapapel de hueso', desc: 'Mango torneado, hoja roma de acero.', price: 22.0, color: '#5A564E', glyph: 'K' },
-  { id: 'p6', sku: 'MER-006', name: 'Sello de cera personal', desc: 'Mango de nogal, sello intercambiable.', price: 28.0, color: '#C84B31', glyph: 'S' },
-  { id: 'p7', sku: 'MER-007', name: 'Carpeta de archivo', desc: 'Cartón prensado, cierre con cordel encerado.', price: 15.0, color: '#3D4E63', glyph: 'F' },
-  { id: 'p8', sku: 'MER-008', name: 'Regla de latón 20cm', desc: 'Grabado láser, biselado para tinta.', price: 11.5, color: '#6B6354', glyph: 'R' },
+  { id: 'p1', sku: 'MER-001', name: 'Cuaderno de hilo', desc: 'Tapa de tela cruda, 120 hojas, cosido a mano.', price: 18.5, image: 'descarga.jpeg', alt: 'Cuaderno de tapa de tela cruda cosido a mano' },
+  { id: 'p2', sku: 'MER-002', name: 'Pluma estilográfica', desc: 'Cuerpo de resina, plumín fino acero inoxidable.', price: 34.0, image: '', alt: 'Pluma estilográfica de cuerpo de resina' },
+  { id: 'p3', sku: 'MER-003', name: 'Tinta sepia 30ml', desc: 'Pigmento mineral, frasco de vidrio soplado.', price: 12.0, image: '', alt: 'Frasco de tinta sepia de vidrio soplado' },
+  { id: 'p4', sku: 'MER-004', name: 'Set de clips de latón', desc: 'Doce piezas, acabado envejecido a mano.', price: 9.5, image: '', alt: 'Set de doce clips de latón envejecido' },
+  { id: 'p5', sku: 'MER-005', name: 'Cortapapel de hueso', desc: 'Mango torneado, hoja roma de acero.', price: 22.0, image: '', alt: 'Cortapapel con mango de hueso torneado' },
+  { id: 'p6', sku: 'MER-006', name: 'Sello de cera personal', desc: 'Mango de nogal, sello intercambiable.', price: 28.0, image: '', alt: 'Sello de cera con mango de nogal' },
+  { id: 'p7', sku: 'MER-007', name: 'Carpeta de archivo', desc: 'Cartón prensado, cierre con cordel encerado.', price: 15.0, image: '', alt: 'Carpeta de cartón prensado con cierre de cordel' },
+  { id: 'p8', sku: 'MER-008', name: 'Regla de latón 20cm', desc: 'Grabado láser, biselado para tinta.', price: 11.5, image: '', alt: 'Regla de latón de 20 centímetros' },
 ];
 
 @Component({

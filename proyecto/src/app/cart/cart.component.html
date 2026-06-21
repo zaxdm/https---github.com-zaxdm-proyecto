@@ -29,7 +29,9 @@
     @for (p of products; track p.id) {
       <div class="card">
         <span class="card-sku">{{ p.sku }}</span>
-        <div class="card-swatch" [style.background]="p.color">{{ p.glyph }}</div>
+        <div class="card-media">
+          <img [src]="p.image" [alt]="p.alt" loading="lazy" />
+        </div>
         <h3 class="card-name">{{ p.name }}</h3>
         <p class="card-desc">{{ p.desc }}</p>
         <div class="card-foot">
@@ -64,8 +66,8 @@
     } @else {
       @for (line of cartLines(); track line.product.id) {
         <div class="line-item">
-          <div class="li-swatch" [style.background]="line.product.color">
-            {{ line.product.glyph }}
+          <div class="li-media">
+            <img [src]="line.product.image" [alt]="line.product.alt" loading="lazy" />
           </div>
           <div class="li-info">
             <div class="li-name">{{ line.product.name }}</div>
