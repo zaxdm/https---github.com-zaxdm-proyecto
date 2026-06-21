@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papelería Meridiano — Catálogo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F7F4EE;
+    --paper-dim: #EFEAE0;
+    --ink: #1C1B19;
+    --ink-soft: #5A564E;
+    --stamp: #C84B31;
+    --stamp-dark: #A33B25;
+    --ledger: #2D5A4A;
+    --line: #D9D2C0;
+    --line-strong: #BDB39D;
+    --display: 'Fraunces', serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --body: 'Inter', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* subtle paper texture via layered gradients */
+  body {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(28,27,25,0.035) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    border-bottom: 1px solid var(--line-strong);
+    padding: 28px 0 22px;
+  }
+
+  .header-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .brand-mark {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-sub {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+  }
+
+  .cart-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 11px 18px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    position: relative;
+  }
+  .cart-toggle:hover { background: var(--stamp-dark); }
+  .cart-toggle:focus-visible { outline: 2px solid var(--stamp); outline-offset: 3px; }
+
+  .cart-count {
+    background: var(--stamp);
+    color: var(--paper);
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+  }
+
+  .tagline {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
+  /* ---------- Catalog ---------- */
+  main {
+    padding: 40px 0 80px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .catalog-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 14px;
+  }
+
+  .catalog-head h1 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .catalog-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .card {
+    background: var(--paper);
+    padding: 22px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: background 0.2s ease;
+  }
+  .card:hover { background: var(--paper-dim); }
+
+  .card-sku {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+
+  .card-swatch {
+    width: 100%;
+    height: 92px;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-size: 38px;
+    color: rgba(247,244,238,0.92);
+  }
+
+  .card-name {
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .card-desc {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  .card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .card-price {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .add-btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .add-btn:hover { background: var(--ink); color: var(--paper); }
+  .add-btn:focus-visible { outline: 2px solid var(--stamp); outline-offset: 2px; }
+
+  .add-btn.stamped {
+    background: var(--ledger);
+    border-color: var(--ledger);
+    color: var(--paper);
+  }
+
+  /* ---------- Cart drawer ---------- */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(28,27,25,0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 40;
+  }
+  .overlay.open { opacity: 1; pointer-events: auto; }
+
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(420px, 92vw);
+    background: var(--paper);
+    border-left: 1px solid var(--line-strong);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 24px rgba(0,0,0,0.08);
+  }
+  .drawer.open { transform: translateX(0); }
+
+  .drawer-head {
+    padding: 26px 24px 18px;
+    border-bottom: 1px dashed var(--line-strong);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .drawer-title {
+    font-family: var(--display);
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .drawer-close {
+    background: none;
+    border: none;
+    font-family: var(--mono);
+    font-size: 20px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+  }
+  .drawer-close:hover { color: var(--ink); }
+
+  .drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 24px;
+  }
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: var(--ink-soft);
+    padding: 60px 20px;
+  }
+  .empty-state .glyph {
+    font-family: var(--display);
+    font-size: 40px;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: var(--line-strong);
+  }
+  .empty-state p { font-size: 13px; }
+
+  .line-item {
+    display: flex;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .li-swatch {
+    width: 46px;
+    height: 46px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-size: 18px;
+    color: rgba(247,244,238,0.92);
+  }
+
+  .li-info { flex: 1; min-width: 0; }
+
+  .li-name {
+    font-family: var(--display);
+    font-size: 14.5px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .li-unit {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .li-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .qty-stepper {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--line-strong);
+  }
+
+  .qty-stepper button {
+    width: 26px;
+    height: 26px;
+    background: none;
+    border: none;
+    font-family: var(--mono);
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .qty-stepper button:hover { background: var(--paper-dim); }
+  .qty-stepper button:focus-visible { outline: 2px solid var(--stamp); outline-offset: -2px; }
+
+  .qty-stepper span {
+    font-family: var(--mono);
+    font-size: 12px;
+    min-width: 24px;
+    text-align: center;
+  }
+
+  .li-line-total {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .li-remove {
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    padding: 0;
+    margin-top: 8px;
+  }
+  .li-remove:hover { color: var(--stamp); }
+
+  .drawer-foot {
+    border-top: 1px solid var(--line-strong);
+    padding: 20px 24px 26px;
+  }
+
+  .totals-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+
+  .totals-row.grand {
+    color: var(--ink);
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line-strong);
+  }
+
+  .checkout-btn {
+    width: 100%;
+    background: var(--stamp);
+    color: var(--paper);
+    border: none;
+    font-family: var(--mono);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 15px;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .checkout-btn:hover { background: var(--stamp-dark); }
+  .checkout-btn:disabled {
+    background: var(--line-strong);
+    cursor: not-allowed;
+  }
+  .checkout-btn:focus-visible { outline: 2px solid var(--ledger); outline-offset: 2px; }
+
+  /* toast confirmation */
+  .toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding: 12px 22px;
+    border-radius: 3px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 60;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition-duration: 0.001ms !important;
+      animation-duration: 0.001ms !important;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 0 18px; }
+    .header-row { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="header-row">
+      <div class="brand">
+        <span class="brand-mark">Meridiano</span>
+        <span class="brand-sub">Papelería &amp; Estudio</span>
+      </div>
+      <button class="cart-toggle" id="cartToggle" aria-haspopup="true" aria-expanded="false">
+        <span>Carrito</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+    <p class="tagline">Objetos para escribir despacio.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="catalog-head">
+    <h1>Catálogo general</h1>
+    <span class="catalog-meta" id="itemCountLabel">8 artículos</span>
+  </div>
+
+  <div class="grid" id="productGrid"></div>
+</main>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="drawer" id="drawer" aria-label="Carrito de compras">
+  <div class="drawer-head">
+    <span class="drawer-title">Tu carrito</span>
+    <button class="drawer-close" id="drawerClose" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody">
+    <!-- rendered by JS -->
+  </div>
+  <div class="drawer-foot" id="drawerFoot" style="display:none;">
+    <div class="totals-row">
+      <span>Subtotal</span>
+      <span id="sumSubtotal">$0.00</span>
+    </div>
+    <div class="totals-row">
+      <span>Envío</span>
+      <span id="sumShipping">$0.00</span>
+    </div>
+    <div class="totals-row grand">
+      <span>Total</span>
+      <span id="sumTotal">$0.00</span>
+    </div>
+    <button class="checkout-btn" id="checkoutBtn">Finalizar compra</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function () {
+  // ---------- Data ----------
+  const PRODUCTS = [
+    { id: 'p1', sku: 'MER-001', name: 'Cuaderno de hilo', desc: 'Tapa de tela cruda, 120 hojas, cosido a mano.', price: 18.50, color: '#2D5A4A', glyph: 'C' },
+    { id: 'p2', sku: 'MER-002', name: 'Pluma estilográfica', desc: 'Cuerpo de resina, plumín fino acero inoxidable.', price: 34.00, color: '#1C1B19', glyph: 'P' },
+    { id: 'p3', sku: 'MER-003', name: 'Tinta sepia 30ml', desc: 'Pigmento mineral, frasco de vidrio soplado.', price: 12.00, color: '#A33B25', glyph: 'T' },
+    { id: 'p4', sku: 'MER-004', name: 'Set de clips de latón', desc: 'Doce piezas, acabado envejecido a mano.', price: 9.50, color: '#8A7A4E', glyph: 'L' },
+    { id: 'p5', sku: 'MER-005', name: 'Cortapapel de hueso', desc: 'Mango torneado, hoja roma de acero.', price: 22.00, color: '#5A564E', glyph: 'K' },
+    { id: 'p6', sku: 'MER-006', name: 'Sello de cera personal', desc: 'Mango de nogal, sello intercambiable.', price: 28.00, color: '#C84B31', glyph: 'S' },
+    { id: 'p7', sku: 'MER-007', name: 'Carpeta de archivo', desc: 'Cartón prensado, cierre con cordel encerado.', price: 15.00, color: '#3D4E63', glyph: 'F' },
+    { id: 'p8', sku: 'MER-008', name: 'Regla de latón 20cm', desc: 'Grabado láser, biselado para tinta.', price: 11.50, color: '#6B6354', glyph: 'R' },
+  ];
+
+  const SHIPPING_FLAT = 4.50;
+  const FREE_SHIP_THRESHOLD = 60;
+
+  // ---------- State ----------
+  let cart = {}; // id -> qty
+
+  // ---------- Elements ----------
+  const grid = document.getElementById('productGrid');
+  const drawer = document.getElementById('drawer');
+  const overlay = document.getElementById('overlay');
+  const cartToggle = document.getElementById('cartToggle');
+  const drawerClose = document.getElementById('drawerClose');
+  const drawerBody = document.getElementById('drawerBody');
+  const drawerFoot = document.getElementById('drawerFoot');
+  const cartCount = document.getElementById('cartCount');
+  const sumSubtotal = document.getElementById('sumSubtotal');
+  const sumShipping = document.getElementById('sumShipping');
+  const sumTotal = document.getElementById('sumTotal');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const toast = document.getElementById('toast');
+  const itemCountLabel = document.getElementById('itemCountLabel');
+
+  itemCountLabel.textContent = PRODUCTS.length + ' artículos';
+
+  // ---------- Render catalog ----------
+  function renderCatalog() {
+    grid.innerHTML = PRODUCTS.map(function (p) {
+      return (
+        '<div class="card">' +
+          '<span class="card-sku">' + p.sku + '</span>' +
+          '<div class="card-swatch" style="background:' + p.color + '">' + p.glyph + '</div>' +
+          '<h3 class="card-name">' + p.name + '</h3>' +
+          '<p class="card-desc">' + p.desc + '</p>' +
+          '<div class="card-foot">' +
+            '<span class="card-price">$' + p.price.toFixed(2) + '</span>' +
+            '<button class="add-btn" data-id="' + p.id + '">Añadir</button>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  // ---------- Cart logic ----------
+  function addToCart(id) {
+    cart[id] = (cart[id] || 0) + 1;
+    renderCart();
+    showToast(PRODUCTS.find(function (p) { return p.id === id; }).name + ' añadido al carrito');
+    pulseButton(id);
+  }
+
+  function changeQty(id, delta) {
+    if (!cart[id]) return;
+    cart[id] += delta;
+    if (cart[id] <= 0) delete cart[id];
+    renderCart();
+  }
+
+  function removeItem(id) {
+    delete cart[id];
+    renderCart();
+  }
+
+  function getEntries() {
+    return Object.keys(cart).map(function (id) {
+      var product = PRODUCTS.find(function (p) { return p.id === id; });
+      return { product: product, qty: cart[id] };
+    });
+  }
+
+  function totalItems() {
+    return Object.values(cart).reduce(function (a, b) { return a + b; }, 0);
+  }
+
+  function subtotal() {
+    return getEntries().reduce(function (sum, e) { return sum + e.product.price * e.qty; }, 0);
+  }
+
+  function pulseButton(id) {
+    var btn = grid.querySelector('.add-btn[data-id="' + id + '"]');
+    if (!btn) return;
+    var original = btn.textContent;
+    btn.textContent = 'Añadido ✓';
+    btn.classList.add('stamped');
+    setTimeout(function () {
+      btn.textContent = original;
+      btn.classList.remove('stamped');
+    }, 900);
+  }
+
+  // ---------- Render cart drawer ----------
+  function renderCart() {
+    var entries = getEntries();
+    var count = totalItems();
+    cartCount.textContent = count;
+
+    if (entries.length === 0) {
+      drawerBody.innerHTML =
+        '<div class="empty-state">' +
+          '<span class="glyph">∅</span>' +
+          '<p>Tu carrito está vacío.<br>Explora el catálogo para empezar.</p>' +
+        '</div>';
+      drawerFoot.style.display = 'none';
+      return;
+    }
+
+    drawerFoot.style.display = 'block';
+
+    drawerBody.innerHTML = entries.map(function (e) {
+      var p = e.product;
+      var lineTotal = (p.price * e.qty).toFixed(2);
+      return (
+        '<div class="line-item">' +
+          '<div class="li-swatch" style="background:' + p.color + '">' + p.glyph + '</div>' +
+          '<div class="li-info">' +
+            '<div class="li-name">' + p.name + '</div>' +
+            '<div class="li-unit">$' + p.price.toFixed(2) + ' c/u</div>' +
+            '<div class="li-controls">' +
+              '<div class="qty-stepper">' +
+                '<button data-action="dec" data-id="' + p.id + '" aria-label="Disminuir cantidad">−</button>' +
+                '<span>' + e.qty + '</span>' +
+                '<button data-action="inc" data-id="' + p.id + '" aria-label="Aumentar cantidad">+</button>' +
+              '</div>' +
+              '<span class="li-line-total">$' + lineTotal + '</span>' +
+            '</div>' +
+            '<button class="li-remove" data-action="remove" data-id="' + p.id + '">Quitar</button>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+
+    var sub = subtotal();
+    var shipping = sub >= FREE_SHIP_THRESHOLD || sub === 0 ? 0 : SHIPPING_FLAT;
+    var total = sub + shipping;
+
+    sumSubtotal.textContent = '$' + sub.toFixed(2);
+    sumShipping.textContent = shipping === 0 ? 'Gratis' : '$' + shipping.toFixed(2);
+    sumTotal.textContent = '$' + total.toFixed(2);
+  }
+
+  // ---------- Toast ----------
+  var toastTimer;
+  function showToast(msg) {
+    clearTimeout(toastTimer);
+    toast.textContent = msg;
+    toast.classList.add('show');
+    toastTimer = setTimeout(function () {
+      toast.classList.remove('show');
+    }, 1800);
+  }
+
+  // ---------- Drawer open/close ----------
+  function openDrawer() {
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    cartToggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    cartToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  // ---------- Event delegation ----------
+  grid.addEventListener('click', function (ev) {
+    var btn = ev.target.closest('.add-btn');
+    if (!btn) return;
+    addToCart(btn.dataset.id);
+  });
+
+  drawerBody.addEventListener('click', function (ev) {
+    var btn = ev.target.closest('button[data-action]');
+    if (!btn) return;
+    var id = btn.dataset.id;
+    var action = btn.dataset.action;
+    if (action === 'inc') changeQty(id, 1);
+    if (action === 'dec') changeQty(id, -1);
+    if (action === 'remove') removeItem(id);
+  });
+
+  cartToggle.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') closeDrawer();
+  });
+
+  checkoutBtn.addEventListener('click', function () {
+    if (totalItems() === 0) return;
+    showToast('Pedido confirmado — gracias por tu compra');
+    cart = {};
+    renderCart();
+    setTimeout(closeDrawer, 1000);
+  });
+
+  // ---------- Init ----------
+  renderCatalog();
+  renderCart();
+})();
+</script>
+
+</body>
+</html>
