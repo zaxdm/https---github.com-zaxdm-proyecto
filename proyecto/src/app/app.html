@@ -1,2 +1,15 @@
-<app-cart></app-cart>
-<router-outlet></router-outlet>
+<div class="app-container">
+  <app-popup-distribuidores></app-popup-distribuidores>
+  <header class="header-container" [class.scrolled]="isNavbarFixed">
+    <app-header></app-header>
+    <app-navbar></app-navbar>
+  </header>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer></app-footer>
+
+  <app-boton-subir></app-boton-subir>
+</div>
