@@ -1,114 +1,39 @@
-<!-- vista-producto.component.html -->
-<section class="vista-producto">
+<!-- vista-producto.component.html  — sin carrito propio, lo maneja app-carrito-global -->
+<section class="vp-page">
 
-  <!-- Hero Banner -->
-  <div class="vp-banner">
-    <div class="vp-banner-overlay"></div>
-    <img [src]="producto.imgBanner || producto.img" [alt]="producto.titulo" class="vp-banner-img" />
-    <div class="vp-banner-content">
-      <span class="vp-breadcrumb">
-        <a routerLink="/productos">Productos</a>
-        <i class="icon_right"></i>
-        {{ producto.titulo }}
-      </span>
-      <h1>{{ producto.titulo }}</h1>
-      <p>{{ producto.descripcion }}</p>
+  <!-- HEADER -->
+  <div class="vp-header">
+    <div class="vp-header-inner">
+      <button class="btn-volver" (click)="volver()">
+        <i class="icon_arrow-left"></i> Productos
+      </button>
+      <h1>{{ categoria.titulo }}</h1>
+      <p class="vp-desc">{{ categoria.descripcion }}</p>
     </div>
   </div>
 
-  <!-- Descripción general -->
-  <div class="vp-intro">
-    <div class="vp-intro-inner">
-      <div class="vp-intro-text">
-        <h2>Descripción General</h2>
-        <p>{{ producto.descripcionLarga }}</p>
-      </div>
-      <div class="vp-intro-highlights">
-        <div class="highlight-item" *ngFor="let punto of producto.puntosClave">
-          <span class="highlight-icon"><i class="icon_check_alt2"></i></span>
-          <span>{{ punto }}</span>
+  <!-- GRID -->
+  <div class="vp-grid-wrap">
+    <div class="vp-grid">
+      <div class="item-card" *ngFor="let item of categoria.items">
+        <div class="item-img">
+          <img [src]="item.img" [alt]="item.nombre" />
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Galería / Variantes de producto -->
-  <div class="vp-variantes" *ngIf="producto.variantes && producto.variantes.length">
-    <div class="vp-variantes-header">
-      <h2>Tipos y Variantes</h2>
-      <p>Seleccione el modelo que se adapta a sus necesidades de perforación</p>
-    </div>
-
-    <div class="vp-variantes-grid">
-      <div
-        class="variante-card"
-        *ngFor="let v of producto.variantes; let i = index"
-        [class.active]="varianteActiva === i"
-        (click)="seleccionarVariante(i)"
-      >
-        <div class="variante-img-wrap">
-          <img [src]="v.img" [alt]="v.nombre" />
+        <div class="item-body">
+          <h3>{{ item.nombre }}</h3>
+          <p>{{ item.descripcion }}</p>
         </div>
-        <div class="variante-info">
-          <h3>{{ v.nombre }}</h3>
-          <p>{{ v.descripcion }}</p>
+        <div class="item-footer">
+          <span class="item-precio">S/ {{ item.precio | number:'1.2-2' }}</span>
+          <button
+            class="btn-agregar"
+            [class.agregado]="estaAgregado(item.id)"
+            (click)="agregarAlCarrito(item)"
+          >
+            <span *ngIf="!estaAgregado(item.id)"><i class="icon_plus"></i> Agregar</span>
+            <span *ngIf="estaAgregado(item.id)"><i class="icon_check_alt2"></i> Agregado</span>
+          </button>
         </div>
-      </div>
-    </div>
-
-    <!-- Detalle de variante seleccionada -->
-    <div class="variante-detalle" *ngIf="producto.variantes[varianteActiva]">
-      <div class="variante-detalle-img">
-        <img
-          [src]="producto.variantes[varianteActiva].imgDetalle || producto.variantes[varianteActiva].img"
-          [alt]="producto.variantes[varianteActiva].nombre"
-        />
-      </div>
-      <div class="variante-detalle-specs">
-        <h3>{{ producto.variantes[varianteActiva].nombre }}</h3>
-        <p>{{ producto.variantes[varianteActiva].descripcionLarga }}</p>
-        <table class="specs-table" *ngIf="producto.variantes[varianteActiva].specs">
-          <tbody>
-            <tr *ngFor="let spec of producto.variantes[varianteActiva].specs | keyvalue">
-              <td class="spec-key">{{ spec.key }}</td>
-              <td class="spec-val">{{ spec.value }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- Aplicaciones -->
-  <div class="vp-aplicaciones" *ngIf="producto.aplicaciones && producto.aplicaciones.length">
-    <div class="vp-aplicaciones-inner">
-      <h2>Aplicaciones</h2>
-      <div class="aplicaciones-grid">
-        <div class="aplicacion-item" *ngFor="let ap of producto.aplicaciones">
-          <div class="aplicacion-icon">
-            <img [src]="ap.icono" [alt]="ap.nombre" *ngIf="ap.icono" />
-            <i class="icon_tools" *ngIf="!ap.icono"></i>
-          </div>
-          <h4>{{ ap.nombre }}</h4>
-          <p>{{ ap.descripcion }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CTA de contacto / más productos -->
-  <div class="vp-cta">
-    <div class="vp-cta-inner">
-      <h2>¿Necesita más información?</h2>
-      <p>
-        Nuestro equipo técnico está disponible para ayudarle a seleccionar la herramienta
-        de perforación ideal para su proyecto.
-      </p>
-      <div class="vp-cta-buttons">
-        <button class="btn-contacto" (click)="irAContacto()">Contactar ahora</button>
-        <button class="btn-volver" (click)="volver()">
-          <i class="icon_arrow-left"></i> Volver a Productos
-        </button>
       </div>
     </div>
   </div>

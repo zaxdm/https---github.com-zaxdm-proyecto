@@ -5,10 +5,11 @@ import { BotonSubirComponent } from "./components/Reutilizables/boton-subir/boto
 import { NavbarComponent } from './components/Reutilizables/navbar/navbar.component';
 import { HeaderComponent } from './components/Reutilizables/header/header.component';
 import { RouterOutlet } from '@angular/router';
+import { CarritoComponent } from "./components/Reutilizables/carrito/carrito.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, NavbarComponent, FooterComponent, PopupDistribuidoresComponent, BotonSubirComponent],
+  imports: [RouterOutlet, HeaderComponent, NavbarComponent, FooterComponent, PopupDistribuidoresComponent, BotonSubirComponent, CarritoComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
