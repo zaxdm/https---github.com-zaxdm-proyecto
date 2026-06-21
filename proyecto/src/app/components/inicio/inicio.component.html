@@ -1,29 +1,31 @@
 <div class="inicio-container">
-
   <!-- ===== BANNER PRINCIPAL ===== -->
   <section class="banner">
-    <div class="banner-content">
-      <div class="banner-text">
-        <h2>Herramientas para Perforación de Rocas</h2>
-        <p>Potenciamos la industria de perforación con productos de primera calidad y servicios excepcionales.</p>
-        <a href="/productos" class="btn-banner">Más</a>
-      </div>
+  <div class="banner-content">
+    <div class="banner-text">
+      <h2>Productos Artesanales que Marcan la Diferencia</h2>
+      <p>
+      Transformamos la cáscara de coco en artículos exclusivos
+        para decoración, moda y souvenirs. Calidad, diseño y artesanía en cada pieza.
+      </p>
+      <a href="/productos" class="btn-banner">Comprar Ahora</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ===== SOBRE NOSOTROS ===== -->
   <section class="about">
     <div class="about-content container">
       <div class="about-image">
-        <img src="assets/images/about_01.jpg" alt="Maxdrill Rock Tools">
+        <img src="icon2.png" alt="Maxdrill Rock Tools" />
       </div>
       <div class="about-text">
         <h3>Sobre Nosotros</h3>
         <p>
-          Maxdrill Rock Tools Co., Ltd. es un fabricante líder de herramientas de perforación y anclaje con sede en China. 
-          Nuestra amplia gama de productos incluye herramientas de perforación superior, DTH, anclajes autoperforantes, 
-          herramientas de piqueras y mucho más. Fabricadas con aleaciones de alta calidad, nuestras soluciones son 
-          confiables y duraderas para minería, túneles y construcción.
+          ECO-CRAFT es una empresa peruana dedicada al diseño, fabricación y comercialización de
+          productos artesanales elaborados a partir de la cáscara de coco. Transformamos esta
+          materia prima en artículos únicos, funcionales y de alta calidad que destacan por su
+          diseño, durabilidad y valor artesanal..
         </p>
         <a class="btn-primary" routerLink="/empresa">Conoce más</a>
       </div>
@@ -34,13 +36,14 @@
   <section class="productos container">
     <h3 class="section-title">Rango de Productos</h3>
     <p class="section-desc">
-      Nuestras herramientas de perforación incluyen brocas, varillas, martillos, anclajes y más.
+       Descubre nuestra colección de artículos artesanales elaborados con cáscara de coco,
+    diseñados para decoración, moda, regalos y souvenirs únicos con identidad peruana.
     </p>
 
     <div class="grid-productos">
       <div class="producto" *ngFor="let producto of productos">
         <a>
-          <img [src]="producto.imagen" [alt]="producto.nombre">
+          <img [src]="producto.imagen" [alt]="producto.nombre" />
           <h4>{{ producto.nombre }}</h4>
         </a>
       </div>
@@ -48,7 +51,7 @@
   </section>
 
   <!-- ===== INDUSTRIAS ===== -->
-  <section class="industrias">
+  <!-- <section class="industrias">
     <div class="container">
       <h3 class="section-title">Industrias a las que servimos</h3>
       <p class="section-desc">
@@ -58,12 +61,11 @@
       <div class="grid-industrias">
         <div class="industria" *ngFor="let ind of industrias">
           <a>
-            <img [src]="ind.imagen" [alt]="ind.nombre">
+            <img [src]="ind.imagen" [alt]="ind.nombre" />
             <h4>{{ ind.nombre }}</h4>
           </a>
         </div>
       </div>
     </div>
-  </section>
-
+  </section> -->
 </div>

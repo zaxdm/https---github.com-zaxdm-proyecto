@@ -7,7 +7,7 @@
 
 /* ======== BANNER ======== */
 .banner {
-  background: url('/images/banner_01.jpg') center/cover no-repeat;
+  background: url('/fondo.png') center/cover no-repeat;
   color: white;
   text-align: left;
   display: flex;
@@ -185,4 +185,17 @@
     flex-direction: column;
     text-align: center;
   }
+}
+
+.about-image {
+  flex: 0 0 200px; /* Ancho fijo */
+  max-width: 200px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: block;
 }
