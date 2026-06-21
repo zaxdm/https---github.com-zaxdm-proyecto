@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Cart } from "./cart/cart.component";
+import { Cartcomponent } from "./cart/cart.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Cart],
+  imports: [RouterOutlet, Cartcomponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

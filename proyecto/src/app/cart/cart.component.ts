@@ -37,7 +37,7 @@ const PRODUCTS: Product[] = [
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css',
 })
-export class Cart {
+export class Cartcomponent {
   products = PRODUCTS;
 
   // id -> qty, como signal para reactividad automática
