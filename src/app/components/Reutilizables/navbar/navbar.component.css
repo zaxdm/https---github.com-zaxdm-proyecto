@@ -41,7 +41,7 @@
 }
 
 .navbar-toggler-icon {
-  filter: invert(1);
+  filter: none;
 }
 
 /* --- Dropdown personalizado --- */
@@ -216,4 +216,35 @@
   background-color: white;
   z-index: -1;
   opacity: 0.8;
+}
+
+/* ── AJUSTES PARA PANTALLAS PEQUEÑAS ── */
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 16px;
+  }
+
+  .navbar-brand img {
+    height: 32px !important;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+
+  .dropdown-item {
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+
+  .navbar-collapse {
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar-brand span {
+    display: none; /* en pantallas ultra angostas, prioriza solo el logo */
+  }
 }

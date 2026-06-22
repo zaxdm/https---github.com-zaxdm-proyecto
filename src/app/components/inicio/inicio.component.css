@@ -312,16 +312,16 @@ a:hover {
   width: 60px;
   margin: 20px auto;
 }
-
 /* ======== RESPONSIVE ======== */
 @media (max-width: 768px) {
   .banner {
-    height: 50vh;
+    height: 55vh;
     text-align: center;
   }
   .banner-content {
     margin-left: 0;
     padding: 0 20px;
+    max-width: 100%;
   }
   .banner-text h2 {
     font-size: 2rem;
@@ -330,25 +330,57 @@ a:hover {
     flex-direction: column;
     text-align: center;
   }
-
-}
-
-.about-image {
-  flex: 0 0 200px; /* Ancho fijo */
-  max-width: 200px;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  display: block;
-
+  .about-image {
+    flex: 0 0 auto;
+    max-width: 220px;
+    margin: 0 auto;
+  }
   .grid-productos {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 18px;
   }
   .grid-industrias {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .banner {
+    height: 65vh;
+  }
+  .banner-text h2 {
+    font-size: 1.6rem;
+  }
+  .banner-text p {
+    font-size: 0.95rem;
+  }
+  .btn-banner {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .section-desc {
+    font-size: 0.9rem;
+  }
+  .about-text h3 {
+    font-size: 1.6rem;
+  }
+  .grid-productos {
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 14px;
+  }
+  .grid-industrias {
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    gap: 14px;
+  }
+  .producto h4 {
+    font-size: 0.9rem;
+    padding: 10px;
   }
 }
