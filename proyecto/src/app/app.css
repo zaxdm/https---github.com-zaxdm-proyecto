@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 }
 
 /* Header y Navbar transparentes y juntos al inicio */
@@ -15,39 +16,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.header-container app-header,
-.header-container app-navbar {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-/* Cuando el usuario hace scroll */
-.header-container.scrolled app-header {
-  display: none; /* El header desaparece */
-}
-
-.header-container.scrolled app-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 20;
-
-  /* 🔹 Color de fondo con transparencia tipo "vidrio ahumado" */
-  background-color: rgba(0, 0, 0, 0.55); /* 55% de opacidad, ajusta si lo quieres más claro u oscuro */
-
-  /* 🔹 Transición suave al aparecer o desaparecer */
-  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-
-  /* 🔹 Sombra sutil para separar del fondo */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-
-  /* ❌ Sin desenfoque, queremos ver el fondo claramente */
-  backdrop-filter: none;
-}
-
-
+/* ... resto de estilos del header ... */
 
 /* Contenido principal debajo del header */
 .main-content {
@@ -55,14 +24,55 @@
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  padding-top: 35px; /* Ajusta según tu header real */
+  padding-top: 35px;
 }
 
-/* Quita márgenes globales */
-:host,
-body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+/* ========== ESTILOS DEL CARRITO ========== */
+/* Si el carrito es un drawer lateral (popup tipo carrito) */
+app-carrito {
+  position: fixed;
+  top: 0;
+  right: -400px; /* Oculto por defecto */
+  width: 380px;
+  max-width: 90vw;
+  height: 100vh;
+  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+  background: #fff;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+  overflow-y: auto;
+}
+
+/* Clase para mostrar el carrito (debes agregarla con un botón) */
+app-carrito.abierto {
+  right: 0;
+}
+
+/* Si el carrito es flotante (botón flotante) */
+app-carrito.flotante {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 999;
+}
+
+/* ========== BOTÓN SUBIR ========== */
+app-boton-subir {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+  app-carrito {
+    width: 100vw;
+    max-width: 100vw;
+    right: -100vw;
+  }
+  
+  app-carrito.abierto {
+    right: 0;
+  }
 }

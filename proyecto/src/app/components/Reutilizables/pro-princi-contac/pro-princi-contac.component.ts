@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { ContacIngComponent } from "../contac-ing/contac-ing.component";
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pro-princi-contac',
-  imports: [ContacIngComponent, CommonModule],
+  imports: [CommonModule],
   templateUrl: './pro-princi-contac.component.html',
   styleUrl: './pro-princi-contac.component.css'
 })

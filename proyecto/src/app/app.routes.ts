@@ -9,20 +9,21 @@ import { VideosComponent } from './components/videos/videos.component';
 import { ContactoComponent } from './components/contacto/contacto/contacto.component';
 import { CategoriaProductosComponent } from './components/Productos/categoria-productos/categoria-productos.component';
 import { SubcategoriaProductosComponent } from './components/Productos/subcategoria-productos/subcategoria-productos.component';
+import { VistaProductoComponent } from './components/Productos/vista-producto/vista-producto.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },
-  { path: 'inicio', component: InicioComponent },
-  { path: 'productos', component: ProductosComponent },
-   { path: 'productos/categorias', component: CategoriaProductosComponent },
-   { path: 'productos/categorias/sub', component: SubcategoriaProductosComponent },
-  { path: 'industrias', component: IndustriasComponent },
-  { path: 'sobre', component: SobreEmpresaComponent },
-  { path: 'novedades', component: NovedadesComponent },
-  { path: 'videos', component: VideosComponent },
-  { path: 'contacto', component: ContactoComponent },
-  { path: '**', redirectTo: 'inicio' }
-
+  { path: 'inicio',                      component: InicioComponent },
+  { path: 'productos',                   component: ProductosComponent },
+  { path: 'productos/categorias',        component: CategoriaProductosComponent },
+  { path: 'productos/categorias/sub',    component: SubcategoriaProductosComponent },
+  { path: 'productos/:slug',             component: VistaProductoComponent },  // ← antes del **
+  { path: 'industrias',                  component: IndustriasComponent },
+  { path: 'sobre',                       component: SobreEmpresaComponent },
+  { path: 'novedades',                   component: NovedadesComponent },
+  { path: 'videos',                      component: VideosComponent },
+  { path: 'contacto',                    component: ContactoComponent },
+  { path: '**',                          redirectTo: 'inicio' },               // ← siempre al final
 ];
 
 @NgModule({

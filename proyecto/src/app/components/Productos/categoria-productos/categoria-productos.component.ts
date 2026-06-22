@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProPrinciContacComponent } from "../../Reutilizables/pro-princi-contac/pro-princi-contac.component";
 import { BannerImagenComponent } from "../../Reutilizables/banner-imagen/banner-imagen.component";
 import { CommonModule } from '@angular/common';
-import { ContacIngComponent } from "../../Reutilizables/contac-ing/contac-ing.component";
 import { Router } from '@angular/router';
 
 interface CategoriaData {
@@ -19,7 +18,7 @@ interface SubCategoria {
 
 @Component({
   selector: 'app-categoria-productos',
-  imports: [ BannerImagenComponent, CommonModule, ContacIngComponent],
+  imports: [ BannerImagenComponent, CommonModule],
   templateUrl: './categoria-productos.component.html',
   styleUrl: './categoria-productos.component.css'
 })

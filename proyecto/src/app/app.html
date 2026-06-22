@@ -1,14 +1,21 @@
 <div class="app-container">
+  <!-- HEADER (absoluto) -->
   <header class="header-container" [class.scrolled]="isNavbarFixed">
     <app-header></app-header>
     <app-navbar></app-navbar>
   </header>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="main-content">
     <router-outlet></router-outlet>
   </main>
 
+  <!-- CARRITO - Colocado aquí entre contenido principal y footer -->
+  <app-carrito></app-carrito>
+
+  <!-- FOOTER -->
   <app-footer></app-footer>
 
+  <!-- BOTÓN SUBIR -->
   <app-boton-subir></app-boton-subir>
 </div>

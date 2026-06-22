@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ContacIngComponent } from "../../Reutilizables/contac-ing/contac-ing.component";
 import { BannerImagenComponent } from "../../Reutilizables/banner-imagen/banner-imagen.component";
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-subcategoria-productos',
-  imports: [ContacIngComponent, BannerImagenComponent,CommonModule],
+  imports: [BannerImagenComponent,CommonModule],
   templateUrl: './subcategoria-productos.component.html',
   styleUrl: './subcategoria-productos.component.css'
 })

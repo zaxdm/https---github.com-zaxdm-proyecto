@@ -1,0 +1,59 @@
+<!-- carrito-global.component.html -->
+
+<!-- Botón flotante -->
+<!-- En lugar de <i class="icon_bag_alt"></i> -->
+<button class="fab-carrito" (click)="toggle()" [class.tiene-items]="carrito.totalItems() > 0">
+  <i class="fas fa-shopping-cart"></i>  <!-- Ícono de carrito Font Awesome -->
+  <span class="fab-badge" *ngIf="carrito.totalItems() > 0">
+    {{ carrito.totalItems() }}
+  </span>
+</button>
+<!-- Overlay -->
+<div class="cg-overlay" [class.open]="abierto()" (click)="cerrar()"></div>
+
+<!-- Panel lateral -->
+<aside class="cg-panel" [class.open]="abierto()">
+
+  <div class="cg-top">
+    <h2>Mi Carrito</h2>
+    <button class="cg-cerrar" (click)="cerrar()"><i class="icon_close"></i></button>
+  </div>
+
+  <!-- Vacío -->
+  <div class="cg-vacio" *ngIf="carrito.items().length === 0">
+    <i class="icon_bag_alt"></i>
+    <p>Tu carrito está vacío</p>
+    <span>Agrega productos desde cualquier categoría</span>
+  </div>
+
+  <!-- Lista de items -->
+  <div class="cg-items" *ngIf="carrito.items().length > 0">
+    <div class="cg-item" *ngFor="let item of carrito.items()">
+      <img [src]="item.img" [alt]="item.nombre" />
+      <div class="cgi-info">
+        <span class="cgi-nombre">{{ item.nombre }}</span>
+        <span class="cgi-cat">{{ item.categoria }}</span>
+        <span class="cgi-precio">S/ {{ item.precio | number:'1.2-2' }}</span>
+      </div>
+      <div class="cgi-qty">
+        <button (click)="carrito.quitar(item.id)">−</button>
+        <span>{{ item.cantidad }}</span>
+        <button (click)="carrito.agregar({ id: item.id, nombre: item.nombre, precio: item.precio, img: item.img, categoria: item.categoria })">+</button>
+      </div>
+      <button class="cgi-delete" (click)="carrito.eliminar(item.id)">
+        <i class="icon_trash"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="cg-footer" *ngIf="carrito.items().length > 0">
+    <div class="cg-subtotal">
+      <span>Subtotal ({{ carrito.totalItems() }} productos)</span>
+      <strong>S/ {{ carrito.totalPrecio() | number:'1.2-2' }}</strong>
+    </div>
+    <button class="btn-cotizar" (click)="cerrar()">Solicitar cotización</button>
+    <button class="btn-vaciar" (click)="carrito.vaciar()">Vaciar carrito</button>
+  </div>
+
+</aside>

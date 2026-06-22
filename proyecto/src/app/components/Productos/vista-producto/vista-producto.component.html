@@ -1,0 +1,58 @@
+<!-- vista-producto.component.html -->
+<section class="vp-section">
+  
+  <!-- HEADER CON IMAGEN DE FONDO -->
+  <div class="vp-header" [style.background-image]="'url(' + categoria.img + ')'">
+    <div class="vp-header-overlay">
+      <div class="container py-5">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <button class="btn-volver" (click)="volver()">
+            <i class="bi bi-arrow-left-circle-fill"></i> Productos
+          </button>
+        </div>
+        
+        <div class="text-center">
+          <h2 class="section-title">{{ categoria.titulo }}</h2>
+          <p class="section-subtitle">{{ categoria.descripcion }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID DE PRODUCTOS -->
+  <div class="container py-4">
+    <div class="row g-4">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let item of categoria.items">
+        <div class="producto-card">
+          <!-- Imagen -->
+          <div class="producto-img">
+            <img [src]="item.img" [alt]="item.nombre" class="img-fluid" />
+          </div>
+          
+          <!-- Cuerpo -->
+          <div class="producto-body">
+            <h5 class="producto-title">{{ item.nombre }}</h5>
+            <p class="producto-desc">{{ item.descripcion }}</p>
+          </div>
+          
+          <!-- Footer -->
+          <div class="producto-footer">
+            <span class="producto-precio">S/ {{ item.precio | number:'1.2-2' }}</span>
+            <button
+              class="btn-agregar"
+              [class.agregado]="estaAgregado(item.id)"
+              (click)="agregarAlCarrito(item)"
+            >
+              <span *ngIf="!estaAgregado(item.id)">
+                <i class="bi bi-plus-circle-fill"></i> Agregar
+              </span>
+              <span *ngIf="estaAgregado(item.id)">
+                <i class="bi bi-check-circle-fill"></i> Agregado
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

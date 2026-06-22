@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ContacIngComponent } from "../../Reutilizables/contac-ing/contac-ing.component";
 import { CommonModule } from '@angular/common';
 import { ProPrinciContacComponent } from "../../Reutilizables/pro-princi-contac/pro-princi-contac.component";
 import { BannerImagenComponent } from "../../Reutilizables/banner-imagen/banner-imagen.component";

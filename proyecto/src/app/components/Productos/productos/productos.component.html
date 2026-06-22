@@ -3,10 +3,9 @@
     <div class="banner-content">
       <h2>Nuestros Productos</h2>
       <p>
-        En Maxdrill, estamos orgullosos de nuestros avanzados procesos y procedimientos de fabricación,
-        que garantizan productos de alta calidad constante mediante el uso de acero y carburo de tungsteno.
-        Nuestro compromiso con la excelencia nos permite no sólo cumplir sino superar las expectativas
-        cuando se trata de sus necesidades de herramientas de perforación.
+        En ECO-CRAFT nos especializamos en el diseño y fabricación de productos artesanales
+        elaborados a partir de la cáscara de coco, aplicando procesos de transformación y acabado
+        que garantizan piezas únicas, resistentes y de alta calidad.
       </p>
     </div>
   </div>
@@ -18,21 +17,18 @@
         <h3>{{ producto.titulo }}</h3>
         <p>{{ producto.descripcion }}</p>
       </div>
-      <button class="btn-mas" (click)="irACategorias()">
-  Más <i class="icon_right"></i>
-</button>
-
+      <button class="btn-mas" (click)="irAProducto(producto.link)">
+        Más <i class="icon_right"></i>
+      </button>
     </div>
   </div>
 
   <div class="productos-brief">
     <p>
-      Como fabricante fiable de herramientas de perforación que ofrece productos de alta calidad,
-      económicos y eficientes, Maxdrill se ha convertido en uno de los fabricantes con mejor reputación
-      en la industria de herramientas de perforación de rocas en China.
-      Confíe en nuestra experiencia y permítanos ofrecerle las soluciones de perforación que necesita.
+      Como fabricantes de productos artesanales elaborados a base de cáscara de coco, en Eco-Craft
+      transformamos un residuo natural en piezas únicas con estilo y funcionalidad. Ofrecemos una
+      línea de productos comerciales como sombreros, lentes, sandalias, maceteros, llaveros y
+      souvenirs, todos diseñados para destacar por su originalidad, durabilidad y acabado artesanal.
     </p>
   </div>
-
-  <app-contac-ing></app-contac-ing>
 </section>
