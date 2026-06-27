@@ -1,0 +1,115 @@
+@if (visible) {
+  <div class="pm-backdrop" (click)="onOverlayClick()">
+    <div class="pm-modal" (click)="$event.stopPropagation()">
+
+      @if (paso() === 'formulario') {
+        <!-- HEADER -->
+        <div class="pm-header">
+          <h2>Datos de pago</h2>
+          <button class="pm-close" (click)="cerrar.emit()">
+            <i class="icon_close"></i>
+          </button>
+        </div>
+
+        <!-- TOTAL -->
+        <div class="pm-total-banner">
+          <span>Total a pagar</span>
+          <strong>S/ {{ carrito.totalPrecio() | number:'1.2-2' }}</strong>
+        </div>
+
+        <!-- FORMULARIO -->
+        <form class="pm-form" (ngSubmit)="pagar()" novalidate>
+
+          <div class="pm-field">
+            <label>Nombre en la tarjeta</label>
+            <input
+              type="text"
+              [(ngModel)]="nombre"
+              name="nombre"
+              placeholder="Ej. Juan García"
+              autocomplete="cc-name"
+              maxlength="40"
+            />
+          </div>
+
+          <div class="pm-field">
+            <label>Número de tarjeta</label>
+            <div class="pm-card-input">
+              <input
+                type="text"
+                [value]="numero"
+                (input)="formatearNumero($event)"
+                name="numero"
+                placeholder="0000 0000 0000 0000"
+                autocomplete="cc-number"
+                inputmode="numeric"
+                maxlength="19"
+              />
+              <span class="pm-card-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="pm-row">
+            <div class="pm-field">
+              <label>Vencimiento</label>
+              <input
+                type="text"
+                [value]="vencimiento"
+                (input)="formatearVencimiento($event)"
+                name="vencimiento"
+                placeholder="MM/AA"
+                autocomplete="cc-exp"
+                inputmode="numeric"
+                maxlength="5"
+              />
+            </div>
+            <div class="pm-field">
+              <label>CVV</label>
+              <input
+                type="password"
+                [(ngModel)]="cvv"
+                name="cvv"
+                placeholder="•••"
+                autocomplete="cc-csc"
+                inputmode="numeric"
+                maxlength="4"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="pm-btn-pagar"
+            [disabled]="!formularioValido"
+          >
+            <i class="fas fa-lock"></i>&nbsp; Pagar S/ {{ carrito.totalPrecio() | number:'1.2-2' }}
+          </button>
+
+        </form>
+      }
+
+      @if (paso() === 'cargando') {
+        <div class="pm-loading">
+          <div class="pm-spinner"></div>
+          <p>Procesando tu pago...</p>
+          <span>No cierres esta ventana</span>
+        </div>
+      }
+
+      @if (paso() === 'exito') {
+        <div class="pm-exito">
+          <div class="pm-check-circle">
+            <i class="fas fa-check"></i>
+          </div>
+          <h3>¡Pago realizado!</h3>
+          <p>Tu compra fue procesada exitosamente.</p>
+          <span>Recibirás una confirmación pronto.</span>
+        </div>
+      }
+
+    </div>
+  </div>
+}
