@@ -83,12 +83,12 @@ export const CATALOGO: CategoriaProducto[] = [
     descripcion: 'Pulseras únicas y artesanales, perfectas como recuerdo o regalo.',
     img: '/producto/product4.jpeg',
     items: [
-      { id: 'pul-01', nombre: 'Pulsera de Perlas', descripcion: 'Pulsera elegante con perlas naturales y cadena de plata.', precio: 15.00, img: '/producto/product4.jpeg' },
-      { id: 'pul-02', nombre: 'Pulsera de Beads', descripcion: 'Pulsera con cuentas de vidrio y cadena de plata.', precio: 15.00, img: '/producto/product4.jpeg' },
-      { id: 'pul-03', nombre: 'Pulsera de Madera', descripcion: 'Pulsera de madera con acabado natural y cadena de plata.', precio: 15.00, img: '/producto/product4.jpeg' },      
-      { id: 'pul-01', nombre: 'Pulsera de Perlas', descripcion: 'Pulsera elegante con perlas naturales y cadena de plata.', precio: 15.00, img: '/producto/product4.jpeg' },
-      { id: 'pul-02', nombre: 'Pulsera de Beads', descripcion: 'Pulsera con cuentas de vidrio y cadena de plata.', precio: 15.00, img: '/producto/product4.jpeg' },
-      { id: 'pul-03', nombre: 'Pulsera de Madera', descripcion: 'Pulsera de madera con acabado natural y cadena de plata.', precio: 15.00, img: '/producto/product4.jpeg' },
+      { id: 'pul-01', nombre: 'Pulsera de Perlas', descripcion: 'Pulsera elegante con perlas naturales y cadena de plata.', precio: 15.00, img: '/producto/pulsera1.jpeg' },
+      { id: 'pul-02', nombre: 'Pulsera de Beads', descripcion: 'Pulsera con cuentas de vidrio y cadena de plata.', precio: 15.00, img: '/producto/pulsera2.jpeg' },
+      { id: 'pul-03', nombre: 'Pulsera de Madera', descripcion: 'Pulsera de madera con acabado natural y cadena de plata.', precio: 15.00, img: '/producto/pulsera3.jpeg' },      
+      { id: 'pul-01', nombre: 'Pulsera de Perlas', descripcion: 'Pulsera elegante con perlas naturales y cadena de plata.', precio: 15.00, img: '/producto/pulsera1.jpeg' },
+      { id: 'pul-02', nombre: 'Pulsera de Beads', descripcion: 'Pulsera con cuentas de vidrio y cadena de plata.', precio: 15.00, img: '/producto/pulsera2.jpeg' },
+      { id: 'pul-03', nombre: 'Pulsera de Madera', descripcion: 'Pulsera de madera con acabado natural y cadena de plata.', precio: 15.00, img: '/producto/pulsera3.jpeg' },
     ]
   }
 ];
