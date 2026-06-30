@@ -45,13 +45,13 @@ export const CATALOGO: CategoriaProducto[] = [
     link: 'sandalias',
     titulo: 'Sandalias de Coco',
     descripcion: 'Cómodas sandalias hechas con cáscara de coco y materiales ecológicos.',
-    img: '/producto/product3.jpeg',
+    img: '/producto/sandalias1.jpeg',
     items: [
-      { id: 'san-01', nombre: 'Sandalias de Coco Natural', descripcion: 'Sandalias con suela de coco natural y tiras de cuero ecológico.', precio: 65.00, img: '/producto/product3.jpeg' },
+      { id: 'san-01', nombre: 'Sandalias de Coco Natural', descripcion: 'Sandalias con suela de coco natural y tiras de cuero ecológico.', precio: 65.00, img: '/producto/sandalias1.jpeg' },
       { id: 'san-02', nombre: 'Sandalias con Plataforma', descripcion: 'Diseño con plataforma de coco, tiras de algodón y cierre ajustable.', precio: 65.00, img: '/producto/product3.jpeg' },
-      { id: 'san-03', nombre: 'Sandalias Tropicales', descripcion: 'Colores vibrantes y detalles con conchas marinas, estilo playa.', precio: 65.00, img: '/producto/product3.jpeg' },
-      { id: 'san-04', nombre: 'Sandalias de Cocotero', descripcion: 'Fabricadas con fibra de coco reciclada y suela de caucho natural.', precio: 65.00, img: '/producto/product3.jpeg' },
-      { id: 'san-05', nombre: 'Sandalias con Cuentas', descripcion: 'Decoradas con cuentas de madera y caracoles, diseño exclusivo.', precio: 65.00, img: '/producto/product3.jpeg' },
+      { id: 'san-03', nombre: 'Sandalias Tropicales', descripcion: 'Colores vibrantes y detalles con conchas marinas, estilo playa.', precio: 65.00, img: '/producto/sandalias1.jpeg' },
+      { id: 'san-04', nombre: 'Sandalias de Cocotero', descripcion: 'Fabricadas con fibra de coco reciclada y suela de caucho natural.', precio: 65.00, img: '/producto/product3.jpeg'},
+      { id: 'san-05', nombre: 'Sandalias con Cuentas', descripcion: 'Decoradas con cuentas de madera y caracoles, diseño exclusivo.', precio: 65.00, img: '/producto/sandalias1.jpeg'},
     ]
   },
   {

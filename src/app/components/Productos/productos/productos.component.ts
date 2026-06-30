@@ -31,7 +31,7 @@ export class ProductosComponent {
   {
     titulo: 'Sandalias de Coco',
     descripcion: 'Cómodas sandalias hechas con cáscara de coco y materiales ecológicos.',
-    img: '/producto/zandalias.png',
+    img: '/producto/sandalias1.jpeg',
     link: 'sandalias'
   },
   {
