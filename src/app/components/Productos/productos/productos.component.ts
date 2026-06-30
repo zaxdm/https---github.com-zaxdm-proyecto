@@ -45,6 +45,12 @@ export class ProductosComponent {
     descripcion: 'Llaveros únicos y personalizados, perfectos como recuerdo o regalo.',
     img: '/producto/llavero.png',
     link: 'llaveros'
+  },
+  {
+    titulo: 'Pulsera Artesanal',
+    descripcion: 'Pulseras únicas y artesanales, perfectas como recuerdo o regalo.',
+    img: '/producto/product4.jpeg',
+    link: 'pulseras'
   }
 ];
 }
